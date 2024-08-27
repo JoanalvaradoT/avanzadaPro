@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style type="text/css">
+        body{
+            background-color: white;
+        }
+        
+        canvas{
+            background-color: rgb(158, 20, 20);
+        }
+
+    </style>
+</head>
+<body>
+    <canvas id = "my_canvas" width="700" height="700"></canvas>
+
+    <script type = "text/javascript">
+
+        
+        const my_canvas = document.getElementById('my_canvas')
+        const ctx = my_canvas.getContext('2d')
+
+
+        var moverX=100;
+        var moverY=100;
+
+        pintar(ctx)
+    
+        document.addEventListener('keypress',function(e){
+
+        
+        switch(e.keyCode)
+
+        {
+
+        case 119:
+            moverY -=10;
+        break;
+        
+        case 115:
+            moverY +=10;
+        break;
+
+        case 97:
+            moverX -=10;
+        break;
+
+        case 100:
+            moverX +=10;
+        break;
+
+        }
+
+        pintar(ctx)
+
+        })
+
+      
+        function pintar(ctx)
+        {
+
+            ctx.fillStyle="white"
+            ctx.fillRect(0, 0,700, 700);
+
+            ctx.fillStyle="green"
+            ctx.fillRect(moverX,moverY,50,50)
+             ctx.strokeRect(moverX,moverY,50,50)
+
+        }
+        
+    
+    
+    
+
+    </script>
+</body>
+</html>
