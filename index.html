@@ -1,94 +1,82 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dibujo en Canvas</title>
-    <style>
-        #myCanvas {
-            border: 1px solid #000000;
+    <title>Canvas Movement</title>
+    <style type="text/css">
+        body {
+            background-color: gray;
+            
+        }
+
+        canvas {
+            background-color: white;
+
         }
     </style>
 </head>
 <body>
-    <canvas id="myCanvas" width="600" height="600"></canvas>
+    <canvas id="my_canvas" width="700" height="700"></canvas>
+
     <script type="text/javascript">
-        const miCanvas = document.getElementById("myCanvas");
-        const ctx = miCanvas.getContext("2d");
+        const my_canvas = document.getElementById('my_canvas');
+        const ctx = my_canvas.getContext('2d');
 
-        const formas = []; 
-        const puntos = [];
-        let colorActual = obtenerColorAleatorio(); 
-        let esCirculo = true; 
-        let botonPresionado = false; // Variable para rastrear el estado del botón
+        let moverX = 100;
+        let moverY = 100;
+        
 
-        function obtenerColorAleatorio() {
-            const letras = '0123456789ABCDEF';
-            let color = '#';
-            for (let i = 0; i < 6; i++) {
-                color += letras[Math.floor(Math.random() * 16)];
-            }
-            return color;
+        function pintar(ctx) {
+            
+
+            ctx.fillStyle = "white";
+            ctx.fillRect(0, 0, my_canvas.width, my_canvas.height);
+
+            ctx.fillStyle = "green";
+            ctx.fillRect(moverX, moverY, 50, 50);
+
+            
         }
 
-        miCanvas.addEventListener("mousedown", function (evento) {
-            const rect = miCanvas.getBoundingClientRect();
-            const x = evento.clientX - rect.left;
-            const y = evento.clientY - rect.top;
-            const tamaño = 80;
+        pintar(ctx);
 
-            formas.push({ x, y, tamaño, color: colorActual, esCirculo });
-            dibujarCanvas();
-            
-            botonPresionado = true; 
-        });
-
-        miCanvas.addEventListener("mouseup", function () {
-            botonPresionado = false; 
-        });
-
-        miCanvas.addEventListener("mouseout", function () {
-            colorActual = obtenerColorAleatorio(); 
-            esCirculo = !esCirculo; 
-            botonPresionado = false; 
-        });
-
-        miCanvas.addEventListener('mousemove', (evento) => {
-            if (!botonPresionado) return; 
-            
-            const rect = miCanvas.getBoundingClientRect();
-            const x = evento.clientX - rect.left;
-            const y = evento.clientY - rect.top;
-
-            if (x >= 0 && x <= miCanvas.width && y >= 0 && y <= miCanvas.height) {
-                puntos.push({ x, y });
-                dibujarCanvas();
+        document.addEventListener('keydown', function(e) {
+            switch(e.key) {
+                case 's': 
+                    moverY += 10;
+                    break;
+                case 'd': 
+                    moverX += 10;
+                    break;
+                case 'w': 
+                    moverY -= 10;
+                    break;
+                case 'a': 
+                    moverX -= 10;
+                    break;
             }
+
+            if(moverX >=700){
+               moverX = 0
+            }
+
+            if(moverX <0){
+               moverX = 700
+            }
+
+            if(moverY >=700){
+               moverY = 0
+            }
+
+            if(moverY <0){
+               moverY = 700
+            }
+
+
+
+            pintar(ctx);
         });
-
-        function dibujarCanvas() {
-            ctx.clearRect(0, 0, miCanvas.width, miCanvas.height);
-
-            formas.forEach(forma => {
-                ctx.beginPath();
-                if (forma.esCirculo) {
-                    ctx.arc(forma.x, forma.y, forma.tamaño / 2, 0, 2 * Math.PI);
-                } else {
-                    ctx.rect(forma.x - forma.tamaño / 2, forma.y - forma.tamaño / 2, forma.tamaño, forma.tamaño);
-                }
-                ctx.fillStyle = forma.color;
-                ctx.fill();
-                ctx.stroke();
-            });
-
-            ctx.fillStyle = 'gray'; 
-            const radio = 2; 
-            puntos.forEach(punto => {
-                ctx.beginPath();
-                ctx.arc(punto.x, punto.y, radio, 0, 2 * Math.PI);
-                ctx.fill();
-            });
-        }
     </script>
 </body>
 </html>
