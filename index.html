@@ -25,9 +25,16 @@ const ctx = myCanvas.getContext("2d");
 var super_x = 100;
 var super_y = 100;
 var direccion = '';
+var speed = 0;
 
 function paint() {
-    ctx.clearRect(0, 0, 600, 500);
+
+    ctx.clearRect(0, 0, 600, 500); 
+
+    ctx.fillStyle='purple';
+    ctx.font = "16px Arial";  
+    ctx.fillText("Speed: " + speed, 450, 20);  
+
     ctx.fillStyle = "red";
     ctx.fillRect(super_x, super_y, 30, 30);
     ctx.strokeRect(super_x, super_y, 30, 30);
@@ -41,7 +48,7 @@ document.addEventListener('keypress', function(e) {
         case 119: 
             direccion = 'up';
             break;
-        case 115: 
+        case 115:
             direccion = 'down';
             break;
         case 97: 
@@ -50,31 +57,34 @@ document.addEventListener('keypress', function(e) {
         case 100: 
             direccion = 'right';
             break;
+        case 32:
+            speed += 2.5;  
+            break;
     }
 });
 
 function update() {
     switch(direccion) {
         case 'up': 
-            super_y -= 10;
+            super_y -= speed;
             if (super_y < -10) {
                 super_y = 480;
             }
             break;
         case 'down': 
-            super_y += 10;
+            super_y += speed;
             if (super_y > 500) {
                 super_y = 0;
             }
             break;
         case 'left': 
-            super_x -= 10;
+            super_x -= speed;
             if (super_x < -10) {
                 super_x = 580;
             }
             break;
         case 'right': 
-            super_x += 10;
+            super_x += speed;
             if (super_x > 600) {
                 super_x = 0;
             }
