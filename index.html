@@ -1,99 +1,87 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>
-Canvas
-</title>
-<style type="text/css">
-body{
-    background-color: gray;
-}
-canvas{
-    background-color: white;
-}
-</style>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas</title>
+    <style type="text/css">
+      body {
+        background-color: black;
+      }
+      canvas {
+        background-color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+    <script type="text/javascript">
+      const myCanvas = document.getElementById("myCanvas");
 
-<canvas id="myCanvas" width="600" height="500"></canvas>
+      const ctx = myCanvas.getContext("2d");
 
-<script type="text/javascript">
-const myCanvas = document.getElementById("myCanvas");
-const ctx = myCanvas.getContext("2d");
-var super_x = 100;
-var super_y = 100;
-var direccion = '';
-var speed = 0;
+      ctx.beginPath();
+      ctx.arc(250, 115, 60, 0, 2 * Math.PI);
+      ctx.closePath();
+      ctx.stroke();
+      ctx.fillStyle = "AntiqueWhite";
+      ctx.fill();
 
-function paint() {
+      ctx.beginPath();
+      ctx.arc(230, 105, 10, 0, 2 * Math.PI);
+      ctx.closePath();
+      ctx.fillStyle = "black";
+      ctx.fill();
 
-    ctx.clearRect(0, 0, 600, 500); 
+      ctx.beginPath();
+      ctx.arc(270, 105, 10, 0, 2 * Math.PI);
+      ctx.closePath();
+      ctx.fillStyle = "black";
+      ctx.fill();
 
-    ctx.fillStyle='purple';
-    ctx.font = "16px Arial";  
-    ctx.fillText("Speed: " + speed, 450, 20);  
+      ctx.beginPath();
+      ctx.arc(250, 130, 20, 0, Math.PI);
+      ctx.closePath();
+      ctx.stroke();
+      
+      ctx.fillStyle = "white";
+      ctx.fillRect(182, 170, 135, 120);
 
-    ctx.fillStyle = "red";
-    ctx.fillRect(super_x, super_y, 30, 30);
-    ctx.strokeRect(super_x, super_y, 30, 30);
+      ctx.fillStyle = "red";
+      ctx.fillRect(182, 170, 25, 120);
 
-    update();
-    requestAnimationFrame(paint); 
-}
+      ctx.fillStyle = "red";
+      ctx.fillRect(235, 170, 25, 120);
 
-document.addEventListener('keypress', function(e) {
-    switch(e.keyCode) {
-        case 119: 
-            direccion = 'up';
-            break;
-        case 115:
-            direccion = 'down';
-            break;
-        case 97: 
-            direccion = 'left';
-            break;
-        case 100: 
-            direccion = 'right';
-            break;
-        case 32:
-            speed += 2.5;  
-            break;
-    }
-});
+      ctx.fillStyle = "red";
+      ctx.fillRect(292, 170, 25, 120);
 
-function update() {
-    switch(direccion) {
-        case 'up': 
-            super_y -= speed;
-            if (super_y < -10) {
-                super_y = 480;
-            }
-            break;
-        case 'down': 
-            super_y += speed;
-            if (super_y > 500) {
-                super_y = 0;
-            }
-            break;
-        case 'left': 
-            super_x -= speed;
-            if (super_x < -10) {
-                super_x = 580;
-            }
-            break;
-        case 'right': 
-            super_x += speed;
-            if (super_x > 600) {
-                super_x = 0;
-            }
-            break;
-    }
-}
+      ctx.fillStyle = "AntiqueWhite";
+      ctx.fillRect(182, 290, 60, 120);
 
-requestAnimationFrame(paint); 
+      ctx.fillStyle = "AntiqueWhite";
+      ctx.fillRect(258, 290, 60, 120);
 
-</script>
-</body>
+      ctx.fillStyle = "AntiqueWhite";
+      ctx.fillRect(102, 200, 30, 60);
+
+      ctx.fillStyle = "AntiqueWhite";
+      ctx.fillRect(102, 170, 80, 30);
+
+      ctx.fillStyle = "AntiqueWhite";
+      ctx.fillRect(367, 200, 30, 60);
+
+      ctx.fillStyle = "AntiqueWhite";
+      ctx.fillRect(317, 170, 80, 30);
+
+      ctx.fillStyle = "red";
+      ctx.fillRect(258, 410, 80, 25);
+
+      ctx.fillStyle = "red";
+      ctx.fillRect(163, 410, 80, 25);
+
+      ctx.fillStyle = "blue";
+      ctx.fillRect(182, 290, 136, 80);
+    </script>
+  </body>
 </html>
