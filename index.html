@@ -6,68 +6,160 @@
     <title>Canvas</title>
     <style type="text/css">
       body {
-        background-color: black;
+        background-color: rgb(255, 255, 255);
       }
       canvas {
-        background-color: rgb(171, 216, 255);
+        background-color: rgb(0, 13, 112);
       }
     </style>
   </head>
   <body>
-    <canvas id="myCanvas" width="700" height="500"></canvas>
+    <canvas id="myCanvas" width="600" height="500"></canvas>
     <script type="text/javascript">
       const myCanvas = document.getElementById("myCanvas");
 
       const ctx = myCanvas.getContext("2d");
 
-      ctx.strokeStyle = "black"; 
-      ctx.lineWidth = 4; 
+      ctx.fillStyle = "peru";
+      ctx.fillRect(0, 400, 600, 100); 
 
+      ctx.fillStyle = "SaddleBrown";
 
-      ctx.fillStyle = "brown";
-      ctx.fillRect(120, 100, 60, 60); 
-      ctx.strokeRect(120, 100, 60, 60); 
+      ctx.fillRect(0, 470, 30, 30); 
 
-      ctx.fillStyle = "brown";
-      ctx.fillRect(180,100, 60, 60); 
-      ctx.strokeRect(180,100, 60, 60);
+      ctx.fillRect(60, 470, 30, 30); 
 
-      ctx.fillStyle = "brown";
-      ctx.fillRect(20,280, 60, 60); 
-      ctx.strokeRect(20,280, 60, 60);
+      ctx.fillRect(120, 470, 30, 30); 
 
+      ctx.fillRect(180, 470, 30, 30); 
 
-      ctx.fillStyle = "LightSkyBlue";
-      ctx.fillRect(280,240, 140, 260); 
-      ctx.strokeRect(280,240, 140, 260);
+      ctx.fillRect(240, 470, 30, 30);
+
+      ctx.fillRect(300, 470, 30, 30);
+
+      ctx.fillRect(360, 470, 30, 30);
+
+      ctx.fillRect(420, 470, 30, 30);
+
+      ctx.fillRect(480, 470, 30, 30);
+
+      ctx.fillRect(540, 470, 30, 30);
       
-      ctx.fillStyle = "LightPink";
-      ctx.fillRect(220,350, 120, 150); 
-      ctx.strokeRect(220,350, 120, 150);
+      ctx.fillRect(0, 410, 30, 30); 
+
+      ctx.fillRect(60, 410, 30, 30); 
+
+      ctx.fillRect(120, 410, 30, 30); 
+
+      ctx.fillRect(180, 410, 30, 30); 
+
+      ctx.fillRect(240, 410, 30, 30); 
+
+      ctx.fillRect(300, 410, 30, 30); 
+
+      ctx.fillRect(360, 410, 30, 30); 
+
+      ctx.fillRect(420, 410, 30, 30); 
+
+      ctx.fillRect(480, 410, 30, 30); 
+
+      ctx.fillRect(540, 410, 30, 30); 
+
+      ctx.fillRect(30, 440, 30, 30); 
+
+      ctx.fillRect(90, 440, 30, 30); 
+
+      ctx.fillRect(150, 440, 30, 30); 
+
+      ctx.fillRect(210, 440, 30, 30); 
+
+      ctx.fillRect(270, 440, 30, 30); 
+
+      ctx.fillRect(330, 440, 30, 30); 
+
+      ctx.fillRect(390, 440, 30, 30); 
+
+      ctx.fillRect(450, 440, 30, 30); 
+
+      ctx.fillRect(510, 440, 30, 30); 
+
+      ctx.fillRect(570, 440, 30, 30); 
+
+      
+      
+      ctx.fillStyle = "green";
+      ctx.fillRect(0, 385, 600, 15); 
+
+      ctx.fillStyle = "Limegreen";
+      ctx.fillRect(0, 370, 600, 15); 
+
+      ctx.fillStyle = "Lime";
+      ctx.fillRect(0, 355, 600, 15); 
+
+      ctx.fillStyle = "SaddleBrown";
+      ctx.fillRect(360, 155, 15, 200); 
+
+      ctx.fillStyle = "green";
+      ctx.fillRect(520, 294, 8, 60);
 
 
-      ctx.strokeStyle = "black"; 
+
+      ctx.fillStyle = "yellow";
+      ctx.beginPath();
+      ctx.arc(525, 260, 35, 0, 2 * Math.PI); 
+      ctx.closePath();
+      ctx.fill();
+
+
+      ctx.fillStyle = "gray";
+      ctx.beginPath();
+      ctx.arc(525, 260, 20, 0, 2 * Math.PI); 
+      ctx.closePath();
+      ctx.fill();
+
+
+      ctx.fillStyle = "green";
+      ctx.beginPath();
+      ctx.arc(0, 100, 70, 0, 2 * Math.PI);    
+      ctx.closePath();
+      ctx.fill();
+
+      ctx.fillStyle = "green";
+      ctx.beginPath();
+      ctx.arc(365, 100, 90, 0, 2 * Math.PI);    
+      ctx.closePath();
+      ctx.fill();
+
+
+
+
+      ctx.strokeStyle = "yellow";
       ctx.lineWidth = 2; 
+      ctx.beginPath();
+      ctx.arc(60, 320, 20, 0, 2 * Math.PI);  
+      ctx.stroke();  
+      ctx.closePath();
 
-      ctx.fillStyle = "MediumSeaGreen";
-      ctx.fillRect(475,380, 90, 120); 
-      ctx.strokeRect(475,380, 90, 120);
+      ctx.beginPath();
+      ctx.arc(160, 320, 20, 0, 2 * Math.PI);  
+      ctx.stroke();  
+      ctx.closePath();
 
-      ctx.fillStyle = "MediumSeaGreen";
-      ctx.fillRect(465,350, 110, 40); 
-      ctx.strokeRect(465,350, 110, 40);
+      ctx.beginPath();
+      ctx.arc(260, 320, 20, 0, 2 * Math.PI);  
+      ctx.stroke();  
+      ctx.closePath();
 
-      ctx.fillStyle = "MediumSpringGreen";
-      ctx.fillRect(620,350, 110, 150); 
-      ctx.strokeRect(620,350, 110, 150);
+
+    
+
+
+
       
 
-      ctx.strokeStyle = "black"; 
-      ctx.lineWidth = 4; 
 
-      ctx.fillStyle = "brown";
-      ctx.fillRect(600,200, 60, 60); 
-      ctx.strokeRect(600,200, 60, 60);
+
+     
 
     </script>
   </body>
