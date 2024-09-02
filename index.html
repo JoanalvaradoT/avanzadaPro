@@ -9,7 +9,7 @@
         background-color: black;
       }
       canvas {
-        background-color: gray;
+        background-color: rgb(255, 255, 255);
       }
     </style>
   </head>
@@ -21,67 +21,122 @@
       const ctx = myCanvas.getContext("2d");
 
       ctx.beginPath();
-      ctx.arc(250, 115, 60, 0, 2 * Math.PI);
+      ctx.arc(240, 230, 120, 0, 2 * Math.PI);
       ctx.closePath();
       ctx.stroke();
-      ctx.fillStyle = "AntiqueWhite";
+      ctx.fillStyle = "green";
       ctx.fill();
 
       ctx.beginPath();
-      ctx.arc(230, 105, 10, 0, 2 * Math.PI);
-      ctx.closePath();
-      ctx.fillStyle = "black";
-      ctx.fill();
-
-      ctx.beginPath();
-      ctx.arc(270, 105, 10, 0, 2 * Math.PI);
-      ctx.closePath();
-      ctx.fillStyle = "black";
-      ctx.fill();
-
-      ctx.beginPath();
-      ctx.arc(250, 130, 20, 0, Math.PI);
+      ctx.arc(20, 20, 50, 0, 2 * Math.PI);
       ctx.closePath();
       ctx.stroke();
-      
-      ctx.fillStyle = "white";
-      ctx.fillRect(182, 170, 135, 120);
+      ctx.fillStyle = "yellow";
+      ctx.fill();
+
+      ctx.fillStyle = "brown";
+      ctx.fillRect(200, 300, 80, 150);
+
+      ctx.fillStyle = "green";
+      ctx.fillRect(0, 450, 500, 50);
 
       ctx.fillStyle = "red";
-      ctx.fillRect(182, 170, 25, 120);
+      ctx.beginPath();
+      ctx.arc(14, 350, 15, 0, 2 * Math.PI); 
+      ctx.closePath();
+      ctx.fill();
 
       ctx.fillStyle = "red";
-      ctx.fillRect(235, 170, 25, 120);
+      ctx.beginPath();
+      ctx.arc(74, 350, 15, 0, 2 * Math.PI); 
+      ctx.closePath();
+      ctx.fill();
 
       ctx.fillStyle = "red";
-      ctx.fillRect(292, 170, 25, 120);
-
-      ctx.fillStyle = "AntiqueWhite";
-      ctx.fillRect(182, 290, 60, 120);
-
-      ctx.fillStyle = "AntiqueWhite";
-      ctx.fillRect(258, 290, 60, 120);
-
-      ctx.fillStyle = "AntiqueWhite";
-      ctx.fillRect(102, 200, 30, 60);
-
-      ctx.fillStyle = "AntiqueWhite";
-      ctx.fillRect(102, 170, 80, 30);
-
-      ctx.fillStyle = "AntiqueWhite";
-      ctx.fillRect(367, 200, 30, 60);
-
-      ctx.fillStyle = "AntiqueWhite";
-      ctx.fillRect(317, 170, 80, 30);
+      ctx.beginPath();
+      ctx.arc(135, 350, 15, 0, 2 * Math.PI); 
+      ctx.closePath();
+      ctx.fill();
 
       ctx.fillStyle = "red";
-      ctx.fillRect(258, 410, 80, 25);
+      ctx.beginPath();
+      ctx.arc(315, 350, 15, 0, 2 * Math.PI); 
+      ctx.closePath();
+      ctx.fill();
 
       ctx.fillStyle = "red";
-      ctx.fillRect(163, 410, 80, 25);
+      ctx.beginPath();
+      ctx.arc(375, 350, 15, 0, 2 * Math.PI); 
+      ctx.closePath();
+      ctx.fill();
+
+      ctx.fillStyle = "red";
+      ctx.beginPath();
+      ctx.arc(435, 350, 15, 0, 2 * Math.PI); 
+      ctx.closePath();
+      ctx.fill();
 
       ctx.fillStyle = "blue";
-      ctx.fillRect(182, 290, 136, 80);
+      ctx.beginPath();
+      ctx.arc(170, 40, 35, 0, 2 * Math.PI); 
+      ctx.closePath();
+      ctx.fill();
+
+      ctx.fillStyle = "blue";
+      ctx.beginPath();
+      ctx.arc(210, 40, 35, 0, 2 * Math.PI); 
+      ctx.closePath();
+      ctx.fill();
+
+      ctx.fillStyle = "blue";
+      ctx.beginPath();
+      ctx.arc(250, 40, 35, 0, 2 * Math.PI); 
+      ctx.closePath();
+      ctx.fill();
+
+      ctx.fillStyle = "blue";
+      ctx.beginPath();
+      ctx.arc(290, 40, 35, 0, 2 * Math.PI); 
+      ctx.closePath();
+      ctx.fill();
+
+      ctx.fillStyle = "blue";
+      ctx.beginPath();
+      ctx.arc(330, 40, 35, 0, 2 * Math.PI); 
+      ctx.closePath();
+      ctx.fill();
+
+      ctx.fillStyle = "blue";
+      ctx.beginPath();
+      ctx.arc(370, 40, 35, 0, 2 * Math.PI); 
+      ctx.closePath();
+      ctx.fill();
+
+
+
+      
+
+      ctx.fillStyle = "yellow";
+      ctx.fillRect(10, 360, 10, 90);
+
+      ctx.fillStyle = "yellow";
+      ctx.fillRect(70, 360, 10, 90);
+
+      ctx.fillStyle = "yellow";
+      ctx.fillRect(130, 360, 10, 90);
+
+      ctx.fillStyle = "yellow";
+      ctx.fillRect(310, 360, 10, 90);
+
+      ctx.fillStyle = "yellow";
+      ctx.fillRect(370, 360, 10, 90);
+
+      ctx.fillStyle = "yellow";
+      ctx.fillRect(430, 360, 10, 90);
+
+
+
+
     </script>
   </body>
 </html>
