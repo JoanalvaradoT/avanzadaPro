@@ -9,133 +9,65 @@
         background-color: black;
       }
       canvas {
-        background-color: rgb(255, 255, 255);
+        background-color: rgb(171, 216, 255);
       }
     </style>
   </head>
   <body>
-    <canvas id="myCanvas" width="500" height="500"></canvas>
+    <canvas id="myCanvas" width="700" height="500"></canvas>
     <script type="text/javascript">
       const myCanvas = document.getElementById("myCanvas");
 
       const ctx = myCanvas.getContext("2d");
 
-      ctx.beginPath();
-      ctx.arc(240, 230, 120, 0, 2 * Math.PI);
-      ctx.closePath();
-      ctx.stroke();
-      ctx.fillStyle = "green";
-      ctx.fill();
+      ctx.strokeStyle = "black"; 
+      ctx.lineWidth = 4; 
 
-      ctx.beginPath();
-      ctx.arc(20, 20, 50, 0, 2 * Math.PI);
-      ctx.closePath();
-      ctx.stroke();
-      ctx.fillStyle = "yellow";
-      ctx.fill();
 
       ctx.fillStyle = "brown";
-      ctx.fillRect(200, 300, 80, 150);
+      ctx.fillRect(120, 100, 60, 60); 
+      ctx.strokeRect(120, 100, 60, 60); 
 
-      ctx.fillStyle = "green";
-      ctx.fillRect(0, 450, 500, 50);
+      ctx.fillStyle = "brown";
+      ctx.fillRect(180,100, 60, 60); 
+      ctx.strokeRect(180,100, 60, 60);
 
-      ctx.fillStyle = "red";
-      ctx.beginPath();
-      ctx.arc(14, 350, 15, 0, 2 * Math.PI); 
-      ctx.closePath();
-      ctx.fill();
-
-      ctx.fillStyle = "red";
-      ctx.beginPath();
-      ctx.arc(74, 350, 15, 0, 2 * Math.PI); 
-      ctx.closePath();
-      ctx.fill();
-
-      ctx.fillStyle = "red";
-      ctx.beginPath();
-      ctx.arc(135, 350, 15, 0, 2 * Math.PI); 
-      ctx.closePath();
-      ctx.fill();
-
-      ctx.fillStyle = "red";
-      ctx.beginPath();
-      ctx.arc(315, 350, 15, 0, 2 * Math.PI); 
-      ctx.closePath();
-      ctx.fill();
-
-      ctx.fillStyle = "red";
-      ctx.beginPath();
-      ctx.arc(375, 350, 15, 0, 2 * Math.PI); 
-      ctx.closePath();
-      ctx.fill();
-
-      ctx.fillStyle = "red";
-      ctx.beginPath();
-      ctx.arc(435, 350, 15, 0, 2 * Math.PI); 
-      ctx.closePath();
-      ctx.fill();
-
-      ctx.fillStyle = "blue";
-      ctx.beginPath();
-      ctx.arc(170, 40, 35, 0, 2 * Math.PI); 
-      ctx.closePath();
-      ctx.fill();
-
-      ctx.fillStyle = "blue";
-      ctx.beginPath();
-      ctx.arc(210, 40, 35, 0, 2 * Math.PI); 
-      ctx.closePath();
-      ctx.fill();
-
-      ctx.fillStyle = "blue";
-      ctx.beginPath();
-      ctx.arc(250, 40, 35, 0, 2 * Math.PI); 
-      ctx.closePath();
-      ctx.fill();
-
-      ctx.fillStyle = "blue";
-      ctx.beginPath();
-      ctx.arc(290, 40, 35, 0, 2 * Math.PI); 
-      ctx.closePath();
-      ctx.fill();
-
-      ctx.fillStyle = "blue";
-      ctx.beginPath();
-      ctx.arc(330, 40, 35, 0, 2 * Math.PI); 
-      ctx.closePath();
-      ctx.fill();
-
-      ctx.fillStyle = "blue";
-      ctx.beginPath();
-      ctx.arc(370, 40, 35, 0, 2 * Math.PI); 
-      ctx.closePath();
-      ctx.fill();
+      ctx.fillStyle = "brown";
+      ctx.fillRect(20,280, 60, 60); 
+      ctx.strokeRect(20,280, 60, 60);
 
 
+      ctx.fillStyle = "LightSkyBlue";
+      ctx.fillRect(280,240, 140, 260); 
+      ctx.strokeRect(280,240, 140, 260);
+      
+      ctx.fillStyle = "LightPink";
+      ctx.fillRect(220,350, 120, 150); 
+      ctx.strokeRect(220,350, 120, 150);
 
+
+      ctx.strokeStyle = "black"; 
+      ctx.lineWidth = 2; 
+
+      ctx.fillStyle = "MediumSeaGreen";
+      ctx.fillRect(475,380, 90, 120); 
+      ctx.strokeRect(475,380, 90, 120);
+
+      ctx.fillStyle = "MediumSeaGreen";
+      ctx.fillRect(465,350, 110, 40); 
+      ctx.strokeRect(465,350, 110, 40);
+
+      ctx.fillStyle = "MediumSpringGreen";
+      ctx.fillRect(620,350, 110, 150); 
+      ctx.strokeRect(620,350, 110, 150);
       
 
-      ctx.fillStyle = "yellow";
-      ctx.fillRect(10, 360, 10, 90);
+      ctx.strokeStyle = "black"; 
+      ctx.lineWidth = 4; 
 
-      ctx.fillStyle = "yellow";
-      ctx.fillRect(70, 360, 10, 90);
-
-      ctx.fillStyle = "yellow";
-      ctx.fillRect(130, 360, 10, 90);
-
-      ctx.fillStyle = "yellow";
-      ctx.fillRect(310, 360, 10, 90);
-
-      ctx.fillStyle = "yellow";
-      ctx.fillRect(370, 360, 10, 90);
-
-      ctx.fillStyle = "yellow";
-      ctx.fillRect(430, 360, 10, 90);
-
-
-
+      ctx.fillStyle = "brown";
+      ctx.fillRect(600,200, 60, 60); 
+      ctx.strokeRect(600,200, 60, 60);
 
     </script>
   </body>
