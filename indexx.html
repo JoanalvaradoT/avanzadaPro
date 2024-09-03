@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Canvas</title>
+    <style type="text/css">
+      body {
+        background-color: gray;
+      }
+      canvas {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="600" height="500"></canvas>
+
+    <script type="text/javascript">
+      const myCanvas = document.getElementById("myCanvas");
+      const ctx = myCanvas.getContext("2d");
+
+      class Rectangulo {
+        constructor(color, h, w, x, y, speed) {
+          this.color = color;
+          this.h = h;
+          this.w = w;
+          this.x = x;
+          this.y = y;
+          this.speed = speed;
+        }
+
+        seToca(otro) {
+          if (
+            this.x < otro.x + otro.w &&
+            this.x + this.w > otro.x &&
+            this.y < otro.y + otro.h &&
+            this.y + this.h > otro.y
+          ) {
+            return true;
+          }
+          return false;
+        }
+      }
+
+      var player = new Rectangulo("red", 30, 30, 100, 100, 5);
+      var target = new Rectangulo("black", 12, 12, 200, 200, null);
+
+      var direccion = "";
+      var speed = 5;
+
+      function paint() {
+        ctx.clearRect(0, 0, 600, 500);
+
+        ctx.fillStyle = "purple";
+        ctx.font = "16px Arial";
+        ctx.fillText("Speed: " + speed, 450, 20);
+
+        ctx.fillStyle = player.color;
+        ctx.fillRect(player.x, player.y, player.w, player.h);
+        ctx.strokeRect(player.x, player.y, player.w, player.h);
+
+        ctx.fillStyle = target.color;
+        ctx.fillRect(target.x, target.y, target.w, target.h);
+        ctx.strokeRect(target.x, target.y, target.w, target.h);
+
+        update();
+        requestAnimationFrame(paint);
+      }
+
+      document.addEventListener("keypress", function (e) {
+        switch (e.keyCode) {
+          case 119:
+            direccion = "up";
+            break;
+          case 115:
+            direccion = "down";
+            break;
+          case 97:
+            direccion = "left";
+            break;
+          case 100:
+            direccion = "right";
+            break;
+          case 32:
+            speed += 2.5;
+            break;
+        }
+      });
+
+      function update() {
+        switch (direccion) {
+          case "up":
+            player.y -= speed;
+            if (player.y < -10) {
+              player.y = 480;
+            }
+            break;
+          case "down":
+            player.y += speed;
+            if (player.y > 500) {
+              player.y = 0;
+            }
+            break;
+          case "left":
+            player.x -= speed;
+            if (player.x < -10) {
+              player.x = 580;
+            }
+            break;
+          case "right":
+            player.x += speed;
+            if (player.x > 600) {
+              player.x = 0;
+            }
+            break;
+        }
+
+        if (player.seToca(target)) {
+          target.x = Math.floor(Math.random() * (600 - target.w));
+          target.y = Math.floor(Math.random() * (500 - target.h));
+        }
+      }
+
+      requestAnimationFrame(paint);
+    </script>
+  </body>
+</html>
