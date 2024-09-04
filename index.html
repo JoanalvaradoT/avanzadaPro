@@ -50,6 +50,8 @@ walls.push(new Rectangulo("gray", 15, 150, 350, 150, null));
 
 var direccion = '';
 var speed = 5;
+var pausa = false;
+var coin = 0
 
 document.addEventListener('keypress', function(e) {
     switch(e.keyCode) {
@@ -65,13 +67,15 @@ document.addEventListener('keypress', function(e) {
         case 100: 
             direccion = 'right';
             break;
-        case 32:
-           
+        case 32: 
+           pausa = !pausa;
             break;
     }
 });
 
 function update() {
+    if (pausa) return;
+
     switch(direccion) {
         case 'up': 
             player.y -= speed;
@@ -99,13 +103,12 @@ function update() {
             break;
     }
 
-    
     if (player.colision(target)) {
+        coin+=1
         target.x = Math.floor(Math.random() * (600 - target.w));
         target.y = Math.floor(Math.random() * (500 - target.h));
     }
 
-    
     walls.forEach(function(wall) {
         if (player.colision(wall)) {
             switch(direccion) {
@@ -129,9 +132,9 @@ function update() {
 function paint() {
     ctx.clearRect(0, 0, 600, 500);
 
-    ctx.fillStyle = "";
+    ctx.fillStyle = "blue";
     ctx.font = '16px Arial';
-    ctx.fillText("Speed: " + speed, 450, 20);
+    ctx.fillText("puntos: " + coin, 450, 20);
 
     ctx.fillStyle = player.color;
     ctx.fillRect(player.x, player.y, player.w, player.h);
@@ -141,12 +144,17 @@ function paint() {
     ctx.fillRect(target.x, target.y, target.w, target.h);
     ctx.strokeRect(target.x, target.y, target.w, target.h);
 
-  
     walls.forEach(function(wall) {
         ctx.fillStyle = wall.color;
         ctx.fillRect(wall.x, wall.y, wall.w, wall.h);
         ctx.strokeRect(wall.x, wall.y, wall.w, wall.h);
     });
+
+    if(pausa){
+        ctx.fillStyle = "blue";
+        ctx.font = '24px Arial';
+        ctx.fillText("PAUSA", 250, 250);
+    }
 
     update();
     requestAnimationFrame(paint); 
